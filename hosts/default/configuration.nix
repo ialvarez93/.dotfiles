@@ -137,6 +137,7 @@
     fira-code-nerdfont
     obsidian
     vscodium
+    gimp
     inkscape-with-extensions
     blender
     calibre
