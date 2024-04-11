@@ -86,6 +86,10 @@
     enable = true;
     userEmail = "ivalvarez22@gmail.com";
     userName = "Ivan Alvarez";
+    extraConfig = {
+      init.defaultBranch = "trunk";
+      safe.directory = "/home/ivan/.dotfiles";
+    };
   };
 
   programs = {
