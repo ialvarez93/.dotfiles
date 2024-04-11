@@ -132,10 +132,12 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lshw
     libsForQt5.bismuth
+    libsForQt5.kdenlive
     alejandra
     fira-code-nerdfont
     obsidian
     vscodium
+    inkscape-with-extensions
     blender
     calibre
     vlc
