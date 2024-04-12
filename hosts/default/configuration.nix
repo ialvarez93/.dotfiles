@@ -104,9 +104,9 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
+      thunderbird
       telegram-desktop
       qbittorrent
-      #  thunderbird
     ];
   };
 
@@ -132,11 +132,14 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lshw
     libsForQt5.bismuth
+    fcitx5
     libsForQt5.kdenlive
     alejandra
+    discord
     fira-code-nerdfont
     obsidian
     vscodium
+    postman
     gimp
     inkscape-with-extensions
     blender
