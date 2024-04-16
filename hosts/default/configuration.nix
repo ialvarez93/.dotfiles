@@ -47,6 +47,16 @@
     LC_TIME = "es_VE.UTF-8";
   };
 
+  i18n.inputMethod.enabled = "fcitx5";
+  i18n.inputMethod.fcitx5.addons = [
+    pkgs.fcitx5-anthy
+    pkgs.fcitx5-gtk
+    pkgs.fcitx5-configtool
+  ];
+  environment.variables.GTK_IM_MODULE = "fcitx";
+  environment.variables.QT_IM_MODULE = "fcitx";
+  environment.variables.XMODIFIERS = "@im=fcitx";
+
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -104,7 +114,6 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
-      thunderbird
       telegram-desktop
       qbittorrent
     ];
@@ -132,7 +141,6 @@
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lshw
     libsForQt5.bismuth
-    fcitx5
     libsForQt5.kdenlive
     alejandra
     discord
@@ -140,7 +148,7 @@
     obsidian
     vscodium
     postman
-    gimp
+    krita
     inkscape-with-extensions
     blender
     calibre
