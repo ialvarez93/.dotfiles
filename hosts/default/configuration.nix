@@ -18,7 +18,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.d
-  boot.kernel.sysctl = {"vm.swappiness" = 1;};
+  boot.kernel.sysctl = {"vm.swappiness" = 0;};
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -175,6 +175,12 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
+  # Auto system update
+  system.autoUpgrade = {
+    enable = true;
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
