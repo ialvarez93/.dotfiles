@@ -14,6 +14,9 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  # Enable flakes
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # Bootloader.d
   boot.kernel.sysctl = {"vm.swappiness" = 1;};
   boot.loader.systemd-boot.enable = true;
@@ -49,7 +52,8 @@
 
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = [
-    pkgs.fcitx5-anthy
+    # pkgs.fcitx5-anthy
+    pkgs.fcitx5-mozc
     pkgs.fcitx5-gtk
     pkgs.fcitx5-configtool
   ];
@@ -57,23 +61,21 @@
   environment.variables.QT_IM_MODULE = "fcitx";
   environment.variables.XMODIFIERS = "@im=fcitx";
 
-  # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "ivan";
-  services.xserver.desktopManager.plasma5.enable = true;
-  programs.kdeconnect.enable = true;
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    plasma-browser-integration
+  # services.xserver.displayManager.autoLogin.enable = true;
+  # services.xserver.displayManager.autoLogin.user = "ivan";
+  services.desktopManager.plasma6.enable = true;
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    # plasma-browser-integration
     elisa
     oxygen
   ];
+  programs.kdeconnect.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -140,19 +142,21 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lshw
-    libsForQt5.bismuth
     libsForQt5.kdenlive
     alejandra
+    nil
     discord
     fira-code-nerdfont
     obsidian
     vscodium
+    android-studio
     postman
     krita
     inkscape-with-extensions
     blender
     calibre
     vlc
+    # haruna
     wget
     curl
   ];

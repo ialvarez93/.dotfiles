@@ -105,9 +105,11 @@
   #Starship
   programs.starship.enable = true;
 
+  #Nixvim
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
+    clipboard.register = "unnamedplus";
 
     viAlias = true;
     vimAlias = true;
@@ -123,8 +125,8 @@
     };
 
     plugins.lualine.enable = true;
-
     plugins.cmp.enable = true;
+    plugins.cmp.autoEnableSources = true;
     plugins.cmp-nvim-lsp.enable = true;
     plugins.cmp-path.enable = true;
     plugins.cmp-treesitter.enable = true;
