@@ -66,8 +66,9 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.displayManager.autoLogin.enable = true;
-  # services.xserver.displayManager.autoLogin.user = "ivan";
+  services.xserver.displayManager.defaultSession = "plasmax11";
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "ivan";
   services.desktopManager.plasma6.enable = true;
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
