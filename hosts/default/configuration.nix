@@ -143,7 +143,6 @@
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     lshw
-    libsForQt5.kdenlive
     alejandra
     nil
     discord
@@ -155,8 +154,13 @@
     krita
     inkscape-with-extensions
     blender
+    libreoffice-qt
+    hunspell
+    hunspellDicts.es_VE
+    hunspellDicts.en_US
     calibre
     vlc
+    libsForQt5.kdenlive
     # haruna
     wget
     curl
