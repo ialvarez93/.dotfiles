@@ -161,7 +161,7 @@
     calibre
     vlc
     libsForQt5.kdenlive
-    # haruna
+    kdePackages.partitionmanager
     wget
     curl
   ];
