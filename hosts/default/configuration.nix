@@ -191,6 +191,24 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    dataDir = "/home/ivan";
+    openDefaultPorts = true;
+    configDir = "/home/ivan/.config/syncthing";
+    user = "ivan";
+    group = "users";
+    guiAddress = "127.0.0.1:8384";
+    # declarative = { SNIPPED };
+  };
+
+  # Syncthing ports: 8384 for remote access to GUI
+  # 22000 TCP and/or UDP for sync traffic
+  # 21027/UDP for discovery
+  # source: https://docs.syncthing.net/users/firewall.html
+  networking.firewall.allowedTCPPorts = [8384 22000];
+  networking.firewall.allowedUDPPorts = [22000 21027];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
