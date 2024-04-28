@@ -189,6 +189,10 @@
 
   programs.tmux = {
     enable = true;
+    mouse = true;
+    clock24 = true;
+    prefix = "C-a";
+    # keyMode = "vi";
   };
 
   programs.ranger = {
