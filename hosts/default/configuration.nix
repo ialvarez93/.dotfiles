@@ -145,6 +145,7 @@
     lshw
     alejandra
     nil
+    gh
     discord
     fira-code-nerdfont
     obsidian
