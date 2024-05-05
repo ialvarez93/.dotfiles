@@ -165,7 +165,7 @@
     hunspellDicts.es_VE
     hunspellDicts.en_US
     calibre
-    mpv
+    vlc
     libsForQt5.kdenlive
     kdePackages.partitionmanager
     wget
