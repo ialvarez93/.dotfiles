@@ -115,11 +115,6 @@
     isNormalUser = true;
     description = "Ivan Alvarez";
     extraGroups = ["networkmanager" "wheel" "kvm" "adbusers"];
-    packages = with pkgs; [
-      firefox
-      telegram-desktop
-      qbittorrent
-    ];
   };
 
   home-manager = {
@@ -142,13 +137,21 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # Utilities
+    wget
+    curl
     lshw
     alejandra
     nil
     gh
     unrar
     p7zip
+    # Internet
+    firefox
+    qbittorrent
+    telegram-desktop
     discord
+    # Development
     fira-code-nerdfont
     obsidian
     vscode-fhs
@@ -157,6 +160,7 @@
     android-studio
     android-udev-rules
     postman
+    # Design
     krita
     inkscape-with-extensions
     blender
@@ -168,8 +172,6 @@
     vlc
     libsForQt5.kdenlive
     kdePackages.partitionmanager
-    wget
-    curl
   ];
 
   # For Android development
