@@ -49,7 +49,7 @@
     LC_TELEPHONE = "es_VE.UTF-8";
     LC_TIME = "es_VE.UTF-8";
   };
-
+  # Enable japanese input
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = [
     # pkgs.fcitx5-anthy
@@ -114,7 +114,7 @@
   users.users.ivan = {
     isNormalUser = true;
     description = "Ivan Alvarez";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "kvm" "adbusers"];
     packages = with pkgs; [
       firefox
       telegram-desktop
@@ -146,11 +146,16 @@
     alejandra
     nil
     gh
+    unrar
+    p7zip
     discord
     fira-code-nerdfont
     obsidian
-    vscodium
+    vscode-fhs
+    # jetbrains.idea-community
+    # jetbrains.pycharm-community
     android-studio
+    android-udev-rules
     postman
     krita
     inkscape-with-extensions
@@ -160,12 +165,15 @@
     hunspellDicts.es_VE
     hunspellDicts.en_US
     calibre
-    vlc
+    mpv
     libsForQt5.kdenlive
     kdePackages.partitionmanager
     wget
     curl
   ];
+
+  # For Android development
+  programs.adb.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
