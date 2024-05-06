@@ -164,11 +164,14 @@
     krita
     inkscape-with-extensions
     blender
+    # Office
     libreoffice-qt
     hunspell
     hunspellDicts.es_VE
     hunspellDicts.en_US
     calibre
+    anki
+    # Media
     vlc
     libsForQt5.kdenlive
     kdePackages.partitionmanager
