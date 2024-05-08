@@ -114,7 +114,7 @@
   users.users.ivan = {
     isNormalUser = true;
     description = "Ivan Alvarez";
-    extraGroups = ["networkmanager" "wheel" "kvm" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "kvm" "adbusers" "docker"];
   };
 
   home-manager = {
@@ -155,6 +155,7 @@
     fira-code-nerdfont
     obsidian
     vscode-fhs
+    docker-compose
     # jetbrains.idea-community
     # jetbrains.pycharm-community
     android-studio
@@ -179,6 +180,14 @@
 
   # For Android development
   programs.adb.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # virtualisation.docker.rootless = {
+  #   enable = true;
+  #   setSocketVariable = true;
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
