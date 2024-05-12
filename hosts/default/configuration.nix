@@ -171,6 +171,8 @@
     hunspellDicts.es_VE
     hunspellDicts.en_US
     calibre
+    # Japanese
+    noto-fonts-cjk-sans
     anki
     # Media
     vlc
