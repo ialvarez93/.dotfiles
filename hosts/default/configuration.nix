@@ -14,8 +14,44 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  # Nix settings
+  nix = {
+    # Store optimization
+    optimise = {
+      automatic = true;
+      dates = ["13:00"];
+    };
+
+    # Garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Deduplicate and optimize nix store on build
+      auto-optimise-store = true;
+    };
+  };
+
+  # nixpkgs instance config
+  nixpkgs = {
+    config = {
+      # Always allow unfree packages
+      allowUnfree = true;
+      # Workaround for https://github.com/nix-community/home-manager/issues/2942
+      allowUnfreePredicate = _: true;
+      # For nvidia drivers
+      nvidia.acceptLicense = true;
+      # For obsidian
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
+  };
 
   # Bootloader.d
   boot.kernel.sysctl = {"vm.swappiness" = 0;};
@@ -125,14 +161,6 @@
     };
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.nvidia.acceptLicense = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -175,7 +203,7 @@
     noto-fonts-cjk-sans
     anki
     # Media
-    vlc
+    mpv
     libsForQt5.kdenlive
     kdePackages.partitionmanager
   ];
@@ -199,19 +227,11 @@
   #   enableSSHSupport = true;
   # };
 
-  # Automatic Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
+  # List services that you want to enable:
   # Auto system update
   system.autoUpgrade = {
     enable = true;
   };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
