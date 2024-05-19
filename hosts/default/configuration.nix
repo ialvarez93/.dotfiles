@@ -174,6 +174,7 @@
     gh
     unrar
     p7zip
+    isoimagewriter
     # Internet
     firefox
     qbittorrent
