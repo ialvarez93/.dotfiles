@@ -4,10 +4,6 @@
   inputs,
   ...
 }: {
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-  ];
-
   nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -110,73 +106,16 @@
     };
   };
 
-  #Nixvim
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    clipboard.register = "unnamedplus";
-
-    viAlias = true;
-    vimAlias = true;
-
-    colorschemes.onedark = {
-      enable = true;
-
-      settings = {
-        style = "warmer";
-        transparent = true;
-        term_colors = true;
-      };
-    };
-
-    plugins.lualine.enable = true;
-    plugins.cmp.enable = true;
-    plugins.cmp.autoEnableSources = true;
-    plugins.cmp-nvim-lsp.enable = true;
-    plugins.cmp-path.enable = true;
-    plugins.cmp-treesitter.enable = true;
-
-    plugins.lsp = {
-      enable = true;
-
-      servers = {
-        nixd.enable = true;
-
-        pylsp.enable = true;
-        sqls.enable = true;
-
-        jsonls.enable = true;
-
-        dockerls.enable = true;
-
-        html.enable = true;
-        tailwindcss.enable = true;
-        tsserver.enable = true;
-        eslint.enable = true;
-
-        solargraph.enable = true;
-
-        lua-ls = {
-          enable = true;
-          settings.telemetry.enable = false;
-        };
-      };
-    };
-
-    plugins.lsp-lines.enable = true;
-    plugins.lint = {
-      enable = true;
-    };
-
-    globals.mapleader = " ";
-
-    opts = {
-      number = true; # Show line numbers
-      relativenumber = true; # Show relative line numbers
-
-      shiftwidth = 2; # Tab width should be 2
-    };
-  };
+  programs.kakoune.enable = true;
+  programs.kakoune.defaultEditor = true;
+  programs.kakoune.config.numberLines.enable = true;
+  programs.kakoune.config.numberLines.relative = true;
+  programs.kakoune.config.numberLines.highlightCursor = true;
+  programs.kakoune.config.ui.assistant = "cat";
+  programs.kakoune.config.ui.enableMouse = true;
+  programs.kakoune.plugins = with pkgs; [
+    kakounePlugins.kak-fzf
+  ];
 
   programs.tmux = {
     enable = true;
