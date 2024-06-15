@@ -75,6 +75,11 @@
     # VISUAL = "vi";
   };
 
+  home.shellAliases = {
+    g = "git";
+    "..." = "cd ../..";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -106,6 +111,10 @@
     };
   };
 
+  programs.eza.enable = true;
+  programs.eza.icons = true;
+  programs.eza.git = true;
+
   programs.kakoune.enable = true;
   programs.kakoune.defaultEditor = true;
   programs.kakoune.config.numberLines.enable = true;
@@ -123,9 +132,5 @@
     clock24 = true;
     prefix = "C-a";
     # keyMode = "vi";
-  };
-
-  programs.ranger = {
-    enable = true;
   };
 }
