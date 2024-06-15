@@ -95,15 +95,20 @@
   programs = {
     direnv = {
       enable = true;
-      enableBashIntegration = true; # see note on other shells below
+      enableBashIntegration = true;
       nix-direnv.enable = true;
     };
 
-    bash.enable = true; # see note on other shells below
-  };
+    #Starship
+    starship.enable = true;
 
-  #Starship
-  programs.starship.enable = true;
+    bash = {
+      enable = true;
+      # This writes to .bashrc KISS
+      # Dev must be shell.nix per project
+      # bashrcExtra = "";
+    };
+  };
 
   #Nixvim
   programs.nixvim = {
@@ -137,16 +142,19 @@
       servers = {
         nixd.enable = true;
 
-        tsserver.enable = true;
-        eslint.enable = true;
+        pylsp.enable = true;
+        sqls.enable = true;
+
+        jsonls.enable = true;
+
+        dockerls.enable = true;
 
         html.enable = true;
         tailwindcss.enable = true;
+        tsserver.enable = true;
+        eslint.enable = true;
 
-        intelephense.enable = true;
-
-        jsonls.enable = true;
-        dockerls.enable = true;
+        solargraph.enable = true;
 
         lua-ls = {
           enable = true;
