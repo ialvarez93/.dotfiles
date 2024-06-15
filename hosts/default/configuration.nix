@@ -174,7 +174,6 @@
     gh
     unrar
     p7zip
-    isoimagewriter
     # Internet
     firefox
     qbittorrent
@@ -189,7 +188,7 @@
     # jetbrains.pycharm-community
     android-studio
     android-udev-rules
-    postman
+    livebook
     # Design
     krita
     inkscape-with-extensions
@@ -206,6 +205,7 @@
     # Media
     mpv
     libsForQt5.kdenlive
+    isoimagewriter
     kdePackages.partitionmanager
   ];
 
@@ -214,6 +214,12 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [
+  #   # Add any missing dynamic libraries for unpackaged programs
+  #   # here, NOT in environment.systemPackages
+  # ];
 
   # virtualisation.docker.rootless = {
   #   enable = true;
