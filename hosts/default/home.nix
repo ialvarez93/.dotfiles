@@ -115,22 +115,28 @@
   programs.eza.icons = true;
   programs.eza.git = true;
 
-  programs.kakoune.enable = true;
-  programs.kakoune.defaultEditor = true;
-  programs.kakoune.config.numberLines.enable = true;
-  programs.kakoune.config.numberLines.relative = true;
-  programs.kakoune.config.numberLines.highlightCursor = true;
-  programs.kakoune.config.ui.assistant = "cat";
-  programs.kakoune.config.ui.enableMouse = true;
-  programs.kakoune.plugins = with pkgs; [
-    kakounePlugins.kak-fzf
-  ];
+  programs.vim.enable = true;
+  programs.vim.defaultEditor = true;
+  programs.vim.settings = {
+    expandtab = true;
+    history = 1000;
+    background = "dark";
+    mouse = "a";
+    number = true;
+    relativenumber = true;
+  };
+  programs.vim.extraConfig = ''
+    set nocompatible
+    set nobackup
+  '';
+
+  programs.ranger.enable = true;
 
   programs.tmux = {
     enable = true;
     mouse = true;
     clock24 = true;
     prefix = "C-a";
-    # keyMode = "vi";
+    keyMode = "vi";
   };
 }

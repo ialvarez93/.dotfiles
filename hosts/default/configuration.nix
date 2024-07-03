@@ -186,6 +186,8 @@
     docker-compose
     android-studio
     android-udev-rules
+    ## Elixir
+    livebook
     # Design
     krita
     inkscape-with-extensions
