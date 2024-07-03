@@ -184,11 +184,8 @@
     obsidian
     vscode-fhs
     docker-compose
-    # jetbrains.idea-community
-    # jetbrains.pycharm-community
     android-studio
     android-udev-rules
-    livebook
     # Design
     krita
     inkscape-with-extensions
@@ -198,6 +195,12 @@
     hunspell
     hunspellDicts.es_VE
     hunspellDicts.en_US
+    ## For Kate
+    aspell
+    aspellDicts.es
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
     calibre
     # Japanese
     noto-fonts-cjk-sans
