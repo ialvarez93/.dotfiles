@@ -243,6 +243,8 @@
   # Auto system update
   system.autoUpgrade = {
     enable = true;
+    allowReboot = true;
+    channel = "https://channels.nixos.org/nixos-24.05";
   };
 
   # Enable the OpenSSH daemon.
