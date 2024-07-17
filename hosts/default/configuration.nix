@@ -186,8 +186,13 @@
     obsidian
     vscode-fhs
     docker-compose
+    ## Android
     android-studio
     android-udev-rules
+    ## Java
+    jetbrains.idea-community
+    ## Python
+    jetbrains.pycharm-community
     ## Elixir
     livebook
     # Design
@@ -210,7 +215,7 @@
     noto-fonts-cjk-sans
     anki
     # Media
-    mpv
+    vlc
     libsForQt5.kdenlive
     isoimagewriter
     kdePackages.partitionmanager
