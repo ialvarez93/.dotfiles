@@ -80,6 +80,9 @@
     "..." = "cd ../..";
   };
 
+  # Bluetooth media controls
+  services.mpris-proxy.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
