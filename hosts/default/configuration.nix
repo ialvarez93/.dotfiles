@@ -93,6 +93,7 @@
     pkgs.fcitx5-gtk
     pkgs.fcitx5-configtool
   ];
+
   environment.variables.GTK_IM_MODULE = "fcitx";
   environment.variables.QT_IM_MODULE = "fcitx";
   environment.variables.XMODIFIERS = "@im=fcitx";
@@ -114,6 +115,7 @@
     elisa
     oxygen
   ];
+
   programs.kdeconnect.enable = true;
 
   # Configure keymap in X11
@@ -148,7 +150,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    # jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -180,21 +182,30 @@
     # Utilities
     wget
     curl
-    lshw
-    alejandra
-    nil
-    gh
     unrar
     p7zip
-    # Internet
+    ## Hardware info
+    lshw
+    aha
+    clinfo
+    pciutils
+    glxinfo
+    vulkan-tools
+    btop
+    ## Nix formatter
+    alejandra
+    nil
+    ## Internet
     firefox
     qbittorrent
     telegram-desktop
-    discord
-    # Development
+    # discord
+    ## Development
+    gh
     fira-code-nerdfont
     obsidian
     vscode-fhs
+    kdePackages.yakuake
     docker-compose
     ## Android
     android-studio
@@ -202,33 +213,27 @@
     ## Java
     jetbrains.idea-community
     ## Python
-    jetbrains.pycharm-community
+    # jetbrains.pycharm-community
     ## Elixir
-    livebook
-    # Design
-    krita
+    # livebook
+    ## Design
+    # krita
     inkscape-with-extensions
-    blender
-    # Office
+    # blender
+    ## Office
     libreoffice-qt
     hunspell
     hunspellDicts.es_VE
     hunspellDicts.en_US
-    ## For Kate
-    aspell
-    aspellDicts.es
-    aspellDicts.en
-    aspellDicts.en-computers
-    aspellDicts.en-science
     calibre
-    # Japanese
+    ## Japanese
     noto-fonts-cjk-sans
     anki
-    # Media
+    ## Media
     vlc
-    libsForQt5.kdenlive
-    isoimagewriter
-    kdePackages.partitionmanager
+    # libsForQt5.kdenlive
+    # isoimagewriter
+    # kdePackages.partitionmanager
   ];
 
   # For Android development
