@@ -205,13 +205,12 @@
     fira-code-nerdfont
     obsidian
     vscode-fhs
-    kdePackages.yakuake
     docker-compose
     ## Android
     android-studio
     android-udev-rules
     ## Java
-    jetbrains.idea-community
+    # jetbrains.idea-community
     ## Python
     # jetbrains.pycharm-community
     ## Elixir
@@ -231,6 +230,7 @@
     anki
     ## Media
     vlc
+    mpv
     # libsForQt5.kdenlive
     # isoimagewriter
     # kdePackages.partitionmanager
