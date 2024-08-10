@@ -128,9 +128,15 @@
     number = true;
     relativenumber = true;
   };
+  programs.vim.plugins = with pkgs.vimPlugins; [
+    vim-ruby
+    vim-elixir
+  ];
   programs.vim.extraConfig = ''
     set nocompatible
     set nobackup
+    syntax on
+    filetype plugin indent on
   '';
 
   programs.ranger.enable = true;
